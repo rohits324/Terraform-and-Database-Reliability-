@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# .gitignore — Terraform-module
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Terraform state — NEVER commit these (may contain secrets + causes conflicts)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform working directory (downloaded providers/modules)
+**/.terraform/
+**/.terraform.lock.hcl
+
+# tfvars files may contain secrets — commit only the example template
+*.tfvars
+!*.tfvars.example
+
+# Crash and debug logs
+crash.log
+crash.*.log
+
+# Override files (used locally, not for version control)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config files
+.terraformrc
+terraform.rc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+ecs/
