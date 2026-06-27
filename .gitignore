@@ -11,9 +11,9 @@
 **/.terraform/
 **/.terraform.lock.hcl
 
-# tfvars files may contain secrets — commit only the example template
-*.tfvars
-!*.tfvars.example
+# # tfvars files may contain secrets — commit only the example template
+# *.tfvars
+# !*.tfvars.example
 
 # Crash and debug logs
 crash.log
