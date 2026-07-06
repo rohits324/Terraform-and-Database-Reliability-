@@ -2,24 +2,25 @@
 # .gitignore — Terraform-module
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Terraform state — NEVER commit these (may contain secrets + causes conflicts)
+# ─── Terraform State ─────────────────────────────────────────────────────────
+# NEVER commit state files — they may contain secrets and cause team conflicts.
+# Use a remote backend (S3 + DynamoDB) configured in backend.tf.
 *.tfstate
 *.tfstate.*
 *.tfstate.backup
 
-# Terraform working directory (downloaded providers/modules)
+# Terraform working directory (downloaded providers + modules)
 **/.terraform/
 **/.terraform.lock.hcl
 
-# # tfvars files may contain secrets — commit only the example template
-# *.tfvars
-# !*.tfvars.example
+# Terraform plan output (binary) — safe to commit the text output (plan.txt)
+*.tfplan
 
 # Crash and debug logs
 crash.log
 crash.*.log
 
-# Override files (used locally, not for version control)
+# Override files (local-only, not for version control)
 override.tf
 override.tf.json
 *_override.tf
@@ -29,9 +30,12 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# OS files
+# ─── Database Backups ────────────────────────────────────────────────────────
+# Backup dumps are large binary files — store in S3 or similar, not git.
+backups/
+*.sql.gz
+*.dump
+
+# ─── OS Files ────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
-
-
-ecs/
