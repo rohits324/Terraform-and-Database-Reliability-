@@ -67,7 +67,7 @@ module "backend" {
     { name = "DB_PASS", value = var.db_password },
   ]
 
-  log_retention_days = 7 
+  log_retention_days = 7
 
   tag_name = var.tag_name
   tag_env  = var.tag_env
