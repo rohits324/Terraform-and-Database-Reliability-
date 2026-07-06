@@ -39,3 +39,6 @@ backups/
 # ─── OS Files ────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+
+# Terraform lock files (provider versions pinned per-machine)
+.terraform.lock.hcl
