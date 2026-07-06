@@ -20,7 +20,7 @@ env:
   AWS_REGION: "us-east-1"
 
 jobs:
-  # ── Formatting Check (applies to entire infra/ tree) ──────────────────────
+  # ── Formatting Check () ──────────────────────
   fmt:
     name: "Terraform Format Check"
     runs-on: ubuntu-latest

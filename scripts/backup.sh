@@ -105,13 +105,5 @@ if [[ ! -s "$BACKUP_FILE" ]]; then
 fi
 
 BACKUP_SIZE="$(du -h "$BACKUP_FILE" | cut -f1)"
+echo "   Backup completed successfully"
 
-echo "--------------------------------------------------"
-echo "  ✅ Backup completed successfully"
-echo "  File      : ${BACKUP_FILE}"
-echo "  Size      : ${BACKUP_SIZE}"
-echo "=================================================="
-echo ""
-echo "  To restore this backup run:"
-echo "    ./scripts/restore.sh ${BACKUP_FILE}"
-echo ""
